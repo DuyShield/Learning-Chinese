@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* ===== Màu & font dùng chung (Tailwind v4) ===== */
+@theme {
+    --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+    --font-zh: "Noto Sans SC", sans-serif;
+
+    --color-primary: #5b8def;
+    --color-primary-dark: #3f6fd8;
+    --color-primary-light: #eaf1ff;
+    --color-accent: #f78b8b;
+    --color-accent-dark: #ee6d6d;
+    --color-lime: #c9f58f;
+    --color-lime-text: #3d6b10;
+    --color-page: #f4f7fd;
+    --color-ink: #1e2433;
+    --color-muted: #6b7489;
+    --color-line: #e3e8f2;
+
+    --shadow-soft: 0 4px 20px rgba(40, 70, 140, 0.07);
+}
+
+/* ===== Chung ===== */
+body            { @apply bg-page font-sans text-[15px] text-ink; }
+button          { @apply cursor-pointer; }
+.layout         { @apply flex min-h-screen; }
+
+/* ===== Sidebar ===== */
+.sidebar {
+    @apply fixed inset-y-0 left-0 z-20 flex w-60 flex-col text-white
+           bg-linear-to-b from-primary to-[#4677e6] transition-transform duration-300;
+}
+.logo           { @apply flex items-center gap-3 px-6 pt-6 pb-7 text-[22px] font-bold; }
+.logo-icon      { @apply grid size-10 place-items-center rounded-xl bg-white font-zh text-primary; }
+.menu           { @apply flex flex-1 flex-col gap-1 px-3.5; }
+.menu-item {
+    @apply flex items-center gap-3.5 rounded-xl px-4 py-3 font-medium text-white/90
+           transition-colors hover:bg-white/15 hover:text-white;
+}
+.menu-item i    { @apply w-5 text-center; }
+.menu-item.active {
+    @apply bg-white text-primary-dark shadow-md hover:bg-white hover:text-primary-dark;
+}
+.sidebar-bottom { @apply flex flex-col gap-2.5 border-t border-white/20 px-3.5 pt-4 pb-5; }
+.user-box       { @apply flex items-center gap-3 rounded-xl bg-white/15 px-3 py-2.5 hover:bg-white/25; }
+.avatar         { @apply grid size-[38px] place-items-center rounded-full bg-[#7ff5cf] text-[#156b55]; }
+.user-name      { @apply text-sm font-semibold; }
+.user-sub       { @apply text-xs opacity-80; }
+.btn-logout {
+    @apply flex items-center justify-center gap-2.5 rounded-xl bg-[#f06a6a]/90 p-2.5 font-medium
+           hover:bg-[#f06a6a];
+}
+.overlay        { @apply hidden; }
+
+/* ===== Main ===== */
+.main           { @apply ml-60 min-w-0 flex-1; }
+.header         { @apply sticky top-0 z-10 flex items-center gap-3.5 border-b border-line bg-white px-8 py-[18px]; }
+.header-icon    { @apply grid size-[46px] place-items-center rounded-xl bg-primary-light text-xl text-primary; }
+.header h1      { @apply text-[22px] font-bold; }
+.header p       { @apply text-[13px] text-muted; }
+.btn-menu       { @apply hidden border-none bg-transparent text-xl text-ink; }
+.content        { @apply mx-auto max-w-[1000px] px-6 pt-7 pb-12; }
+
+/* ===== Tab HSK ===== */
+.hsk-tabs {
+    @apply flex gap-1.5 overflow-x-auto rounded-2xl border border-line bg-white p-1.5 shadow-soft;
+}
+.hsk-tab {
+    @apply flex min-w-[90px] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl
+           border-none bg-transparent px-3 py-2.5 font-bold text-ink transition-all hover:bg-primary-light;
+}
+.hsk-tab.active {
+    @apply bg-accent text-white shadow-[0_4px_12px_rgba(247,139,139,0.4)] hover:bg-accent;
+}
+.tab-count {
+    @apply rounded-full bg-primary-light px-[7px] py-px text-[11px] font-semibold text-primary-dark;
+}
+.hsk-tab.active .tab-count { @apply bg-white/30 text-white; }
+.notice         { @apply mt-2.5 text-xs leading-normal text-muted; }
+.notice i       { @apply mr-1 text-primary; }
+
+/* ===== Tiến độ ===== */
+.progress-card  { @apply mt-5 rounded-[14px] border border-line bg-white px-5 py-4; }
+.progress-info  { @apply mb-2.5 flex flex-wrap justify-between gap-1.5 text-sm; }
+.progress-info span:last-child { @apply text-muted; }
+.progress-info b { @apply text-primary; }
+.progress-bar   { @apply h-2 overflow-hidden rounded-[10px] bg-primary-light; }
+.progress-fill {
+    @apply h-full w-0 rounded-[10px] bg-linear-to-r from-primary to-[#7fb0ff]
+           transition-[width] duration-[400ms];
+}
+
+/* ===== Lọc + tìm kiếm ===== */
+.toolbar        { @apply mt-5 flex flex-wrap items-center justify-between gap-3.5; }
+.status-filters { @apply flex flex-wrap gap-2; }
+.status-btn {
+    @apply flex items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-[13px]
+           font-semibold text-muted transition-all hover:border-accent hover:text-accent-dark;
+}
+.status-btn i   { @apply text-[11px]; }
+.status-btn.active {
+    @apply border-accent bg-accent text-white hover:text-white;
+}
+.search-box {
+    @apply flex w-80 max-w-full items-center gap-2.5 rounded-xl border-[1.5px] border-line bg-white
+           px-3.5 py-2.5 transition-colors focus-within:border-primary;
+}
+.search-box > i { @apply text-muted; }
+.search-box input { @apply min-w-0 flex-1 border-none bg-transparent text-sm outline-none; }
+.btn-clear      { @apply hidden border-none bg-transparent text-muted hover:text-ink; }
+.result-count   { @apply mt-[18px] mb-3 text-[13px] text-muted; }
+
+/* ===== Thẻ ngữ pháp ===== */
+.grammar-grid   { @apply grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4; }
+.grammar-card {
+    @apply flex cursor-pointer flex-col rounded-2xl border border-line bg-white px-5 py-[18px]
+           transition-all hover:-translate-y-[3px] hover:border-primary hover:shadow-soft;
+}
+.gc-top         { @apply flex items-start justify-between gap-2.5; }
+.gc-title       { @apply flex flex-wrap items-baseline gap-2.5; }
+.gc-hanzi       { @apply font-zh text-2xl font-bold; }
+.gc-pinyin      { @apply text-[17px] font-semibold text-primary; }
+.badge-hsk      { @apply shrink-0 rounded-full bg-lime px-2.5 py-[3px] text-[11px] font-bold text-lime-text; }
+.gc-name        { @apply mt-1 text-sm font-semibold; }
+.gc-desc        { @apply mt-2 flex-1 text-[13px] leading-relaxed text-muted; }
+.gc-bottom      { @apply mt-3.5 flex items-center justify-between border-t border-dashed border-line pt-3; }
+.gc-more        { @apply text-[13px] font-semibold text-primary; }
+.gc-more i      { @apply transition-transform; }
+.grammar-card:hover .gc-more i { @apply translate-x-[3px]; }
+
+.status-tag     { @apply rounded-full px-2.5 py-[3px] text-xs font-semibold; }
+.status-tag.chua-hoc { @apply bg-[#eef0f4] text-muted; }
+.status-tag.dang-hoc { @apply bg-primary-light text-primary-dark; }
+.status-tag.on-tap   { @apply bg-[#e1f8ef] text-[#1f8a66]; }
+
+.empty {
+    @apply hidden flex-col items-center gap-1.5 rounded-2xl border border-dashed border-line bg-white
+           px-5 py-[50px] text-center;
+}
+.empty i        { @apply mb-1.5 text-4xl text-primary; }
+.empty p        { @apply font-semibold; }
+.empty span     { @apply text-[13px] text-muted; }
+
+/* ===== Popup ===== */
+.modal {
+    @apply invisible fixed inset-0 z-40 flex items-center justify-center bg-[rgba(20,30,60,0.45)]
+           p-4 opacity-0 transition-all duration-[250ms];
+}
+.modal.show     { @apply visible opacity-100; }
+.modal-box {
+    @apply relative max-h-[90vh] w-[560px] max-w-full translate-y-5 overflow-y-auto rounded-[20px]
+           bg-white p-7 transition-transform duration-[250ms];
+}
+.modal.show .modal-box { @apply translate-y-0; }
+.modal-close {
+    @apply absolute top-4 right-4 size-[34px] rounded-full border-none bg-page text-muted
+           hover:bg-primary-light hover:text-primary;
+}
+.modal-head     { @apply flex flex-wrap items-baseline gap-3 pr-10; }
+.m-hanzi        { @apply font-zh text-[34px] font-bold; }
+.m-pinyin       { @apply text-xl font-semibold text-primary; }
+.m-name         { @apply mt-1 text-base text-muted; }
+.m-title        { @apply mt-5 mb-2 text-sm font-bold; }
+.m-desc         { @apply leading-relaxed text-muted; }
+.m-structure {
+    @apply rounded-[10px] border-l-4 border-primary bg-primary-light px-4 py-3 font-zh font-semibold
+           text-primary-dark;
+}
+.m-example      { @apply flex justify-between gap-3 rounded-[10px] border border-line px-4 py-3.5; }
+.ex-zh          { @apply font-zh text-lg font-medium; }
+.ex-py          { @apply my-1 text-sm text-primary; }
+.ex-vi          { @apply text-sm text-muted; }
+.icon-btn       { @apply size-10 shrink-0 rounded-xl border-none bg-primary text-white hover:bg-primary-dark; }
+.m-status       { @apply flex flex-wrap gap-2; }
+.m-status button {
+    @apply flex-1 rounded-[10px] border border-line bg-white p-2.5 text-[13px] font-semibold text-muted
+           hover:border-primary hover:text-primary;
+}
+.m-status button.active { @apply border-primary bg-primary text-white hover:text-white; }
+
+/* ===== Toast ===== */
+.toast {
+    @apply pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 translate-y-5
+           rounded-[10px] bg-ink px-5 py-2.5 text-sm text-white opacity-0 transition-all duration-300;
+}
+.toast.show     { @apply translate-y-0 opacity-100; }
+
+/* ===== Mobile ===== */
+@media (width < 860px) {
+    .sidebar        { @apply -translate-x-full; }
+    .sidebar.open   { @apply translate-x-0; }
+    .overlay.show   { @apply fixed inset-0 z-[15] block bg-black/35; }
+    .main           { @apply ml-0; }
+    .btn-menu       { @apply block; }
+    .header         { @apply px-4 py-3.5; }
+    .content        { @apply px-4 pt-5 pb-10; }
+    .search-box     { @apply w-full; }
+    .grammar-grid   { @apply grid-cols-1; }
+    .modal-box      { @apply p-[22px]; }
+}
