@@ -85,7 +85,7 @@
                     @if (!empty($p['token']))
                         <input type="hidden" name="token" value="{{ $request->route('token') }}">
                     @endif
-
+                    {{-- Fields hiển thị --}}
                     @foreach ($p['fields'] as $f)
                         @php $type = $f['type'] ?? 'text'; @endphp
                         <div>
@@ -100,7 +100,8 @@
                                     @if ($type !== 'password') value="{{ old($f['name'], $prefill[$f['name']] ?? '') }}" @endif
                                     @isset($f['autocomplete']) autocomplete="{{ $f['autocomplete'] }}" @endisset
                                     @if (!empty($f['autofocus'])) autofocus @endif
-                                    required class="{{ $inputClass($f['name']) }}">
+                                    @if ($f['required'] ?? true) required @endif
+                                    class="{{ $inputClass($f['name']) }}">
                                 @if ($type === 'password')
                                     <button type="button" data-password-toggle="{{ $f['name'] }}"
                                         class="absolute right-3 top-1/2 mt-1 -translate-y-1/2 rounded-md p-1 text-slate-400 hover:text-[#3E3B8A]"
@@ -122,7 +123,7 @@
                         </label>
                     @endif
 
-                    <button type="submit" class="mt-1 w-full rounded-xl bg-[#3E3B8A] px-6 py-3.5 font-semibold text-white shadow-lg shadow-[#3E3B8A]/20 transition hover:bg-[#312E78] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E3B8A]">
+                    <button type="submit" class="mt-1 w-full rounded-xl bg-blue-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-[#3E3B8A]/20 transition hover:bg-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E3B8A]">
                         {{ $p['submit'] }}
                     </button>
                 </form>
@@ -141,7 +142,7 @@
             @isset($p['footer'])
                 <p class="mt-7 text-center text-sm text-slate-500">
                     {{ $p['footer']['text'] ?? '' }}
-                    <a href="{{ url($p['footer']['href']) }}" class="font-semibold text-[#4F46A8] hover:text-[#312E81]">{{ $p['footer']['label'] }}</a>
+                    <a href="{{ url($p['footer']['href']) }}" class="font-semibold text-blue-500 hover:text-blue-300">{{ $p['footer']['label'] }}</a>
                 </p>
             @endisset
         </div>

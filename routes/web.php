@@ -6,7 +6,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Http\Request;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GrammarController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\VocabularyController;
 use App\Models\User;
 
@@ -49,21 +53,15 @@ Route::get('/register', function () {
 // Tạo tài khoản mới, đăng nhập user vừa tạo và chuyển đến dashboard.
 Route::post('/register', function (Request $request) {
     $data = $request->validate([
-        'name' => ['required', 'string', 'max:100'],
+        'full_name' => ['required', 'string', 'max:100'],
+        'username' => ['required', 'string', 'max:50', 'unique:users,username'],
         'email' => ['required', 'email', 'max:120', 'unique:users,email'],
         'password' => ['required', 'confirmed', 'min:8'],
     ]);
 
-    $baseUsername = str($data['name'])->ascii()->slug('_')->limit(40, '')->toString();
-    $username = $baseUsername ?: 'user';
-    $suffix = 1;
-    while (User::where('username', $username)->exists()) {
-        $username = substr($baseUsername, 0, 38).'_'.$suffix++;
-    }
-
     $user = User::create([
-        'username' => $username,
-        'full_name' => $data['name'],
+        'username' => $data['username'],
+        'full_name' => $data['full_name'],
         'email' => $data['email'],
         'password' => Hash::make($data['password']),
     ]);
@@ -113,21 +111,23 @@ Route::post('/reset-password', function (Request $request) {
 });
 
 // Đăng xuất, hủy session và chuyển đến trang thông báo.
-Route::post('/logout', function (Request $request) {
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-
-    return redirect('/logout');
-});
-
-// Hiển thị thông báo sau khi user đăng xuất.
-Route::get('/logout', fn () => view('pages/pagelog', ['page' => 'logout']));
+Route::post('/logout', [SessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
 
 // Hiển thị dashboard; middleware auth chỉ cho phép user đã đăng nhập truy cập.
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware('auth')
     ->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search.index');
+    Route::get('/ngu-phap', [GrammarController::class, 'index'])->name('grammar.user');
+    Route::post('/ngu-phap/{grammarPoint}/progress', [GrammarController::class, 'updateProgress'])
+        ->name('grammar.progress.update');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 // Tra cứu từ vựng cho guest; controller chuyển user đã đăng nhập sang trang riêng.
 Route::get('/tra-cuu', [VocabularyController::class, 'index'])

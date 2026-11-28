@@ -18,7 +18,8 @@ return [
         'subheading' => 'Bắt đầu học tiếng Trung miễn phí.',
         'action' => '/register',
         'fields' => [
-            ['name' => 'name', 'label' => 'Họ và tên', 'autocomplete' => 'name', 'autofocus' => true],
+            ['name' => 'full_name', 'label' => 'Họ và tên', 'autocomplete' => 'name', 'autofocus' => true],
+            ['name' => 'username', 'label' => 'Tên đăng nhập', 'autocomplete' => 'username'],
             ['name' => 'email', 'label' => 'Email', 'type' => 'email', 'autocomplete' => 'email'],
             ['name' => 'password', 'label' => 'Mật khẩu', 'type' => 'password', 'autocomplete' => 'new-password'],
             ['name' => 'password_confirmation', 'label' => 'Nhập lại mật khẩu', 'type' => 'password', 'autocomplete' => 'new-password'],
@@ -47,13 +48,5 @@ return [
             ['name' => 'password_confirmation', 'label' => 'Nhập lại mật khẩu', 'type' => 'password', 'autocomplete' => 'new-password'],
         ],
         'submit' => 'Cập nhật mật khẩu',
-    ],
-    'logout' => [
-        'title' => 'Bạn đã đăng xuất',
-        'subheading' => 'Hẹn gặp lại bạn trong bài học tiếp theo.',
-        'buttons' => [
-            ['label' => 'Đăng nhập lại', 'href' => '/login'],
-            ['label' => 'Về trang chủ', 'href' => '/', 'outline' => true],
-        ],
     ],
 ];

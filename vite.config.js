@@ -11,6 +11,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/css/TraTuVung.css',
                 'resources/js/TraTuVung.js',
+                'resources/css/NguPhap.css',
+                'resources/js/NguPhap.js',
             ],
             refresh: true,
             fonts: [

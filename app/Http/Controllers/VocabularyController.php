@@ -10,13 +10,24 @@ use Illuminate\Support\Facades\Auth;
 
 class VocabularyController extends Controller
 {
-    // Tra từ vụng người dùng
-    public function userIndex(): View
+    /**
+     * Mở từ được chọn từ modal; nếu không có word_id thì hiển thị gợi ý ngẫu nhiên.
+     */
+    public function userIndex(Request $request): View
     {
+        // Kiểm tra ID và bảo đảm từ được yêu cầu còn tồn tại.
+        $filters = $request->validate([
+            'word_id' => ['nullable', 'integer', 'exists:vocabularies,id'],
+        ]);
+        $selectedWord = isset($filters['word_id'])
+            ? Vocabulary::query()->findOrFail($filters['word_id'])
+            : null;
+
         $goiY = Vocabulary::query()
             ->inRandomOrder()
             ->limit(8)
             ->get([
+                'id',
                 'hanzi',
                 'pinyin',
                 'meaning',
@@ -27,14 +38,25 @@ class VocabularyController extends Controller
                 'example_meaning',
             ]);
 
-        $tuBanDau = $goiY->first();
+        if ($selectedWord) {
+                // Đưa từ được chọn lên đầu để nội dung trang và JS cùng hiển thị từ đó.
+            $goiY = $goiY
+                ->reject(fn (Vocabulary $word) => $word->getKey() === $selectedWord->getKey())
+                ->prepend($selectedWord)
+                ->values();
+        }
 
-        return view('pages.TraTuVung', [
+        $tuBanDau = $selectedWord ?? $goiY->first();
+
+        return view('pages.vocabulary-user', [
             'goiY' => $goiY,
             'tuBanDau' => $tuBanDau,
         ]);
     }
 
+    /**
+     * API gợi ý tối đa 12 từ theo chữ Hán, pinyin, nghĩa và câu ví dụ.
+     */
     public function searchUser(Request $request): JsonResponse
     {
         $filters = $request->validate([
@@ -59,7 +81,7 @@ class VocabularyController extends Controller
         return response()->json($results);
     }
 
-    // Tra từ vựng
+    /** Trang tra cứu công khai; người đã đăng nhập được chuyển sang trang riêng. */
     public function index(Request $request)
     {
         if (Auth::check()) {

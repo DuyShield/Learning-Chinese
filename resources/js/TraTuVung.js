@@ -139,7 +139,7 @@ function veGanDay() {
     $("recentBox").style.display = ganDay.length ? "flex" : "none";
 }
 
-// ===== Yêu thích =====
+// Yêu thích 
 function capNhatNutYeuThich() {
     const btn = $("btnFav");
     const daLuu = yeuThich.includes(tuHienTai);
@@ -147,9 +147,9 @@ function capNhatNutYeuThich() {
     btn.innerHTML = daLuu ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
 }
 
-// ===== Dropdown gợi ý khi gõ =====
+// Dropdown gợi ý khi gõ 
 let latestSearchId = 0;
-
+// Hiển thị dropdown gợi ý từ vựng khi gõ
 async function veDropdown(keyword) {
     const dropdown = $("dropdown");
     const tuKhoa = keyword.trim();
@@ -196,7 +196,7 @@ async function veDropdown(keyword) {
         dropdown.classList.add("show");
     }
 }
-
+// Chọn từ từ gợi ý hoặc danh sách gần đây
 function chonTu(record) {
     hienThiTu(record.hanzi, thongTinTu(record));
     $("searchInput").value = "";
