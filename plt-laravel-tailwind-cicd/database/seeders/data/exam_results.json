@@ -1,0 +1,50 @@
+[
+  {
+    "user_name": "Nguyễn Văn A",
+    "exam": "Thi thử HSK1",
+    "score": 85,
+    "taken_at": "2026-11-20"
+  },
+  {
+    "user_name": "Trần Thị B",
+    "exam": "Thi thử HSK1",
+    "score": 72,
+    "taken_at": "2026-11-20"
+  },
+  {
+    "user_name": "Phạm Thị D",
+    "exam": "Thi thử HSK2",
+    "score": 58,
+    "taken_at": "2026-11-21"
+  },
+  {
+    "user_name": "Ngô Văn I",
+    "exam": "Thi thử HSK1",
+    "score": 90,
+    "taken_at": "2026-11-22"
+  },
+  {
+    "user_name": "Vũ Thị F",
+    "exam": "Thi thử HSK3",
+    "score": 45,
+    "taken_at": "2026-11-22"
+  },
+  {
+    "user_name": "Bùi Thị H",
+    "exam": "Thi thử HSK2",
+    "score": 66,
+    "taken_at": "2026-11-23"
+  },
+  {
+    "user_name": "Nguyễn Văn A",
+    "exam": "Thi thử HSK2",
+    "score": 78,
+    "taken_at": "2026-11-24"
+  },
+  {
+    "user_name": "Đỗ Thị K",
+    "exam": "Thi thử HSK1",
+    "score": 55,
+    "taken_at": "2026-11-24"
+  }
+]

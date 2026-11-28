@@ -1,0 +1,62 @@
+[
+  {
+    "code": "HSK1-GT",
+    "name": "Giáo trình HSK 1",
+    "description": "Giáo trình cơ bản dành cho người mới bắt đầu học tiếng Trung.",
+    "hsk": 1,
+    "lessons": 12,
+    "words": 150,
+    "author": "Nguyễn Văn A",
+    "is_active": true
+  },
+  {
+    "code": "HSK2-GT",
+    "name": "Giáo trình HSK 2",
+    "description": "Giáo trình sơ cấp, mở rộng vốn từ và ngữ pháp cơ bản.",
+    "hsk": 2,
+    "lessons": 15,
+    "words": 300,
+    "author": "Trần Thị B",
+    "is_active": true
+  },
+  {
+    "code": "HSK3-GT",
+    "name": "Giáo trình HSK 3",
+    "description": "Giáo trình trung cấp, nâng cao kỹ năng giao tiếp.",
+    "hsk": 3,
+    "lessons": 20,
+    "words": 600,
+    "author": "Lê Văn C",
+    "is_active": false
+  },
+  {
+    "code": "HSK4-GT",
+    "name": "Giáo trình HSK 4",
+    "description": "Giáo trình cao cấp, luyện tập kỹ năng đọc hiểu.",
+    "hsk": 4,
+    "lessons": 25,
+    "words": 1200,
+    "author": "Phạm Thị D",
+    "is_active": true
+  },
+  {
+    "code": "HSK5-GT",
+    "name": "Giáo trình HSK 5",
+    "description": "Giáo trình nâng cao, chuẩn bị cho kỳ thi HSK 5.",
+    "hsk": 5,
+    "lessons": 30,
+    "words": 2500,
+    "author": "Hoàng Văn E",
+    "is_active": true
+  },
+  {
+    "code": "HSK6-GT",
+    "name": "Giáo trình HSK 6",
+    "description": "Giáo trình chuyên sâu, dành cho người học đã thành thạo.",
+    "hsk": 6,
+    "lessons": 35,
+    "words": 5000,
+    "author": "Vũ Thị F",
+    "is_active": false
+  }
+]

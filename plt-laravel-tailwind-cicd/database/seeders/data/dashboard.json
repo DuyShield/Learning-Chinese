@@ -1,0 +1,68 @@
+{
+  "stats": [
+    {
+      "icon": "👥",
+      "label": "Tổng người dùng",
+      "value": 12480,
+      "delta": "+12%",
+      "color": "#86F7D3"
+    },
+    {
+      "icon": "📚",
+      "label": "Từ vựng",
+      "value": 8320,
+      "delta": "+8%",
+      "color": "#E4FA9A"
+    },
+    {
+      "icon": "📖",
+      "label": "Giáo trình",
+      "value": 142,
+      "delta": "+3%",
+      "color": "#5B8DF6"
+    },
+    {
+      "icon": "✏️",
+      "label": "Ngữ pháp",
+      "value": 560,
+      "delta": "-2%",
+      "color": "#FF8E8E"
+    }
+  ],
+  "months": [
+    420,
+    510,
+    480,
+    620,
+    700,
+    650,
+    780,
+    820,
+    900,
+    980,
+    1150,
+    0
+  ],
+  "roles": [
+    {
+      "name": "Học sinh",
+      "pct": 55,
+      "color": "#5B8DF6"
+    },
+    {
+      "name": "Giáo viên",
+      "pct": 30,
+      "color": "#86F7D3"
+    },
+    {
+      "name": "Phụ huynh",
+      "pct": 10,
+      "color": "#E4FA9A"
+    },
+    {
+      "name": "Admin",
+      "pct": 5,
+      "color": "#FF8E8E"
+    }
+  ]
+}
