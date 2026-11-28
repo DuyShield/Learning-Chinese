@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Nguyễn Văn A",
+    "email": "nguyenvana@email.com",
+    "role": "Student",
+    "phone": "0900000001",
+    "is_active": true
+  },
+  {
+    "name": "Trần Thị B",
+    "email": "tranthib@email.com",
+    "role": "Student",
+    "phone": "0900000002",
+    "is_active": true
+  },
+  {
+    "name": "Lê Văn C",
+    "email": "levanc@email.com",
+    "role": "Teacher",
+    "phone": "0900000003",
+    "is_active": true
+  },
+  {
+    "name": "Phạm Thị D",
+    "email": "phamthid@email.com",
+    "role": "Student",
+    "phone": "0900000004",
+    "is_active": true
+  },
+  {
+    "name": "Hoàng Văn E",
+    "email": "hoangvane@email.com",
+    "role": "Admin",
+    "phone": "0900000005",
+    "is_active": true
+  },
+  {
+    "name": "Vũ Thị F",
+    "email": "vuthif@email.com",
+    "role": "Student",
+    "phone": "0900000006",
+    "is_active": false
+  },
+  {
+    "name": "Đặng Văn G",
+    "email": "dangvang@email.com",
+    "role": "Teacher",
+    "phone": "0900000007",
+    "is_active": true
+  },
+  {
+    "name": "Bùi Thị H",
+    "email": "buithih@email.com",
+    "role": "Student",
+    "phone": "0900000008",
+    "is_active": false
+  },
+  {
+    "name": "Ngô Văn I",
+    "email": "ngovani@email.com",
+    "role": "Student",
+    "phone": "0900000009",
+    "is_active": true
+  },
+  {
+    "name": "Đỗ Thị K",
+    "email": "dothik@email.com",
+    "role": "Parent",
+    "phone": "0900000010",
+    "is_active": false
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "c": "你",
+    "py": "nǐ",
+    "vi": "bạn / anh / chị",
+    "strokes": 7,
+    "hsk": 1,
+    "info": "Gồm bộ 亻 (người) và 尔.",
+    "example": "你好 (nǐ hǎo): xin chào"
+  },
+  {
+    "c": "好",
+    "py": "hǎo",
+    "vi": "tốt, hay",
+    "strokes": 6,
+    "hsk": 1,
+    "info": "Gồm 女 (phụ nữ) và 子 (con).",
+    "example": "你好 (nǐ hǎo): xin chào"
+  },
+  {
+    "c": "我",
+    "py": "wǒ",
+    "vi": "tôi",
+    "strokes": 7,
+    "hsk": 1,
+    "info": "Chữ 我 có nét móc dài ở bên phải.",
+    "example": "我是学生: tôi là học sinh"
+  },
+  {
+    "c": "大",
+    "py": "dà",
+    "vi": "to, lớn",
+    "strokes": 3,
+    "hsk": 1,
+    "info": "Hình người dang rộng hai tay.",
+    "example": "大学 (dàxué): đại học"
+  },
+  {
+    "c": "人",
+    "py": "rén",
+    "vi": "người",
+    "strokes": 2,
+    "hsk": 1,
+    "info": "Hình người đang bước đi nhìn nghiêng.",
+    "example": "中国人 (Zhōngguó rén): người Trung Quốc"
+  },
+  {
+    "c": "学",
+    "py": "xué",
+    "vi": "học",
+    "strokes": 8,
+    "hsk": 1,
+    "info": "Phần dưới là 子 (đứa trẻ).",
+    "example": "学生 (xuésheng): học sinh"
+  },
+  {
+    "c": "水",
+    "py": "shuǐ",
+    "vi": "nước",
+    "strokes": 4,
+    "hsk": 1,
+    "info": "Hình dòng nước chảy.",
+    "example": "喝水 (hē shuǐ): uống nước"
+  },
+  {
+    "c": "家",
+    "py": "jiā",
+    "vi": "nhà",
+    "strokes": 10,
+    "hsk": 1,
+    "info": "Gồm 宀 (mái nhà) ở trên và 豕 (con lợn) ở dưới.",
+    "example": "我家 (wǒ jiā): nhà tôi"
+  }
+]

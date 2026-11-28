@@ -1,0 +1,82 @@
+[
+  {
+    "zh": "语素",
+    "py": "yǔ sù",
+    "name": "Ngữ tố",
+    "hsk": 1,
+    "description": "Ngữ tố là đơn vị nhỏ nhất có nghĩa trong ngôn ngữ, không chia nhỏ hơn mà vẫn giữ được nghĩa.",
+    "example": "朋、友、学、校 đều là ngữ tố."
+  },
+  {
+    "zh": "是字句",
+    "py": "shì zì jù",
+    "name": "Câu chữ 是",
+    "hsk": 1,
+    "description": "Cấu trúc: A + 是 + B. Dùng để khẳng định A là B.",
+    "example": "我是学生。 (Tôi là học sinh.)"
+  },
+  {
+    "zh": "吗",
+    "py": "ma",
+    "name": "Câu hỏi với 吗",
+    "hsk": 1,
+    "description": "Thêm 吗 vào cuối câu trần thuật để tạo câu hỏi có/không.",
+    "example": "你是老师吗？ (Bạn là giáo viên à?)"
+  },
+  {
+    "zh": "不",
+    "py": "bù",
+    "name": "Phủ định với 不",
+    "hsk": 1,
+    "description": "Đặt 不 trước động từ hoặc tính từ để phủ định, thường cho hiện tại và tương lai.",
+    "example": "我不喝茶。 (Tôi không uống trà.)"
+  },
+  {
+    "zh": "没有",
+    "py": "méiyǒu",
+    "name": "Phủ định với 没",
+    "hsk": 2,
+    "description": "Đặt 没 trước động từ để phủ định hành động đã xảy ra hoặc phủ định 有.",
+    "example": "我没有时间。 (Tôi không có thời gian.)"
+  },
+  {
+    "zh": "正在",
+    "py": "zhèngzài",
+    "name": "Hành động đang diễn ra",
+    "hsk": 2,
+    "description": "Cấu trúc: 主语 + 正在 + động từ. Nhấn mạnh hành động đang tiến hành.",
+    "example": "他正在看书。 (Anh ấy đang đọc sách.)"
+  },
+  {
+    "zh": "比",
+    "py": "bǐ",
+    "name": "Câu so sánh với 比",
+    "hsk": 2,
+    "description": "Cấu trúc: A + 比 + B + tính từ. A hơn B ở một tính chất.",
+    "example": "今天比昨天冷。 (Hôm nay lạnh hơn hôm qua.)"
+  },
+  {
+    "zh": "过",
+    "py": "guo",
+    "name": "Đã từng với 过",
+    "hsk": 2,
+    "description": "Đặt 过 sau động từ để diễn tả đã từng trải qua việc gì.",
+    "example": "我去过北京。 (Tôi đã từng đến Bắc Kinh.)"
+  },
+  {
+    "zh": "把字句",
+    "py": "bǎ zì jù",
+    "name": "Câu chữ 把",
+    "hsk": 3,
+    "description": "Cấu trúc: 主语 + 把 + tân ngữ + động từ + thành phần khác. Nhấn mạnh kết quả xử lý tân ngữ.",
+    "example": "请把门关上。 (Hãy đóng cửa lại.)"
+  },
+  {
+    "zh": "了",
+    "py": "le",
+    "name": "Trợ từ 了",
+    "hsk": 3,
+    "description": "Đặt sau động từ hoặc cuối câu để diễn tả hành động đã hoàn thành hoặc tình huống thay đổi.",
+    "example": "我吃了早饭。 (Tôi đã ăn sáng.)"
+  }
+]

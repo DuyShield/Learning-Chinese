@@ -1,0 +1,167 @@
+[
+  {
+    "hsk": 1,
+    "question": "“谢谢” nghĩa là gì?",
+    "options": [
+      "Cảm ơn",
+      "Xin lỗi",
+      "Tạm biệt",
+      "Xin chào"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 1,
+    "question": "Chọn pinyin đúng của 朋友:",
+    "options": [
+      "péngyou",
+      "píngyǒu",
+      "bèngyóu",
+      "pēngyòu"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 1,
+    "question": "我 ___ 学生。",
+    "options": [
+      "是",
+      "在",
+      "有",
+      "吃"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 1,
+    "question": "“Bệnh viện” trong tiếng Trung là:",
+    "options": [
+      "学校",
+      "医院",
+      "老师",
+      "朋友"
+    ],
+    "answer": 1
+  },
+  {
+    "hsk": 1,
+    "question": "有人问你：“你好吗？” Câu trả lời phù hợp là:",
+    "options": [
+      "我很好，谢谢。",
+      "再见。",
+      "我是老师吗？",
+      "什么？"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 2,
+    "question": "他 ___ 看书。 (đang đọc sách)",
+    "options": [
+      "正在",
+      "把",
+      "比",
+      "被"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 2,
+    "question": "今天 ___ 昨天冷。",
+    "options": [
+      "比",
+      "过",
+      "吗",
+      "没"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 2,
+    "question": "“喜欢” nghĩa là gì?",
+    "options": [
+      "Ghét",
+      "Thích",
+      "Biết",
+      "Đi"
+    ],
+    "answer": 1
+  },
+  {
+    "hsk": 2,
+    "question": "我去 ___ 北京。 (đã từng)",
+    "options": [
+      "过",
+      "着",
+      "吗",
+      "吧"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 2,
+    "question": "“生日” nghĩa là gì?",
+    "options": [
+      "Công việc",
+      "Sinh nhật",
+      "Vấn đề",
+      "Buổi tối"
+    ],
+    "answer": 1
+  },
+  {
+    "hsk": 3,
+    "question": "“经验” nghĩa là gì?",
+    "options": [
+      "Kinh nghiệm",
+      "Cuộc họp",
+      "Gần đây",
+      "Hài lòng"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 3,
+    "question": "请把门 ___ 上。",
+    "options": [
+      "关",
+      "开",
+      "看",
+      "做"
+    ],
+    "answer": 0
+  },
+  {
+    "hsk": 3,
+    "question": "“附近” nghĩa là gì?",
+    "options": [
+      "Xa xôi",
+      "Gần đây",
+      "Bên trong",
+      "Phía sau"
+    ],
+    "answer": 1
+  },
+  {
+    "hsk": 3,
+    "question": "“会议” nghĩa là gì?",
+    "options": [
+      "Bữa tiệc",
+      "Cuộc họp",
+      "Kỳ thi",
+      "Chuyến đi"
+    ],
+    "answer": 1
+  },
+  {
+    "hsk": 3,
+    "question": "我对这个结果很 ___。",
+    "options": [
+      "满意",
+      "附近",
+      "会议",
+      "经验"
+    ],
+    "answer": 0
+  }
+]
