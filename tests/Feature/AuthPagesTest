@@ -1,0 +1,76 @@
+<?php
+
+namespace Tests\Feature;
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class AuthPagesTest extends TestCase
+{
+    use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->withoutVite();
+    }
+
+    public function test_cac_trang_auth_hien_thi(): void
+    {
+        foreach (['/', '/login', '/register', '/forgot-password', '/logged-out'] as $url) {
+            $this->get($url)->assertOk();
+        }
+    }
+
+    public function test_khach_vao_dashboard_bi_chuyen_ve_login(): void
+    {
+        $this->get('/dashboard')->assertRedirect('/login');
+    }
+
+    public function test_dang_ky_thanh_cong(): void
+    {
+        $this->post('/register', [
+            'name' => 'Minh Anh',
+            'email' => 'anh@example.com',
+            'password' => 'matkhau-12345',
+            'password_confirmation' => 'matkhau-12345',
+        ])->assertRedirect();
+
+        $this->assertDatabaseHas('users', ['email' => 'anh@example.com']);
+        $this->assertAuthenticated();
+    }
+
+    public function test_dang_ky_that_bai_khi_mat_khau_khong_khop(): void
+    {
+        $this->post('/register', [
+            'name' => 'Minh Anh',
+            'email' => 'anh@example.com',
+            'password' => 'matkhau-12345',
+            'password_confirmation' => 'khac',
+        ])->assertSessionHasErrors('password');
+
+        $this->assertDatabaseMissing('users', ['email' => 'anh@example.com']);
+    }
+
+    public function test_dang_nhap_dung_va_sai(): void
+    {
+        $user = User::factory()->create(['password' => bcrypt('matkhau-12345')]);
+
+        $this->post('/login', ['email' => $user->email, 'password' => 'sai'])
+            ->assertSessionHasErrors('email');
+        $this->assertGuest();
+
+        $this->post('/login', ['email' => $user->email, 'password' => 'matkhau-12345']);
+        $this->assertAuthenticatedAs($user);
+    }
+
+    public function test_dang_xuat_chuyen_sang_trang_da_dang_xuat(): void
+    {
+        $this->actingAs(User::factory()->create())
+            ->post('/logout')
+            ->assertRedirect('/logged-out');
+
+        $this->assertGuest();
+    }
+}

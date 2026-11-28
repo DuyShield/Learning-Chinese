@@ -2,24 +2,27 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
     /**
-     * Seed the application's database.
+     * Thứ tự quan trọng: bài học trước, từ vựng sau, bài tập sau cùng
+     * (từ vựng cần lesson_id, bài tập cần vocabulary_id).
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            UserSeeder::class,
+            LessonSeeder::class,
+            VocabularySeeder::class,
+            ExerciseSeeder::class,
         ]);
+
+        // Bỏ qua nếu chưa chạy migration của 2 bảng ngữ pháp
+        if (Schema::hasTable('grammar_points') && Schema::hasTable('grammar_examples')) {
+            $this->call(GrammarSeeder::class);
+        }
     }
 }
